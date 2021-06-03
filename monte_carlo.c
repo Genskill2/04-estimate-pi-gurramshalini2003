@@ -38,6 +38,23 @@ int main(void) {
     }
   }
 }
-
-
-
+float mc_pi(int n)
+{   float t,x,y;
+    int within_circle=0;
+    int outside_circle=0;
+    int total_points=0;
+    for(int i=0;i<=n;i++)
+    {  x=frandom();
+       y=frandom();
+       t=(x*x)+(y*y);
+       if(t<=1)
+       {  within_circle++;
+       }
+       else
+       {  outside_circle++;
+       }
+    }
+    total_points= within_circle+ outside_circle; 
+    float pi=4*(float)within_circle/total_points;
+    return pi;
+}
